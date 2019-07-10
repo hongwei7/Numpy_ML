@@ -1,0 +1,1072 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"y_",
+				"y_train\tstatement"
+			],
+			[
+				"load",
+				"load_data\tfunction"
+			],
+			[
+				"X",
+				"X_test"
+			],
+			[
+				"X_t",
+				"X_train\tstatement"
+			],
+			[
+				"in",
+				"index\tstatement"
+			],
+			[
+				"tes",
+				"y_test"
+			],
+			[
+				"pr",
+				"pre_y\tstatement"
+			],
+			[
+				"row",
+				"row1\tstatement"
+			],
+			[
+				"y",
+				"pre_y"
+			],
+			[
+				"p",
+				"predict"
+			],
+			[
+				"X_",
+				"X_test\tstatement"
+			],
+			[
+				"pre",
+				"pre_y\tstatement"
+			],
+			[
+				"n",
+				"n_neighbors\tparam"
+			],
+			[
+				"r",
+				"randint\tstatement"
+			],
+			[
+				"co",
+				"cloest"
+			],
+			[
+				"matr",
+				"matrix\tclass"
+			],
+			[
+				"re",
+				"return\tkeyword"
+			],
+			[
+				"loc",
+				"locate\tstatement"
+			],
+			[
+				"lo",
+				"locate\tstatement"
+			],
+			[
+				"da",
+				"data\tstatement"
+			],
+			[
+				"as",
+				"astype"
+			],
+			[
+				"ma",
+				"max_depth"
+			],
+			[
+				"stop",
+				"stopping_letter\tstatement"
+			],
+			[
+				"s",
+				"s_index\tstatement"
+			],
+			[
+				"pri",
+				"prime"
+			],
+			[
+				"an",
+				"answer"
+			],
+			[
+				"ios",
+				"iostream\tstandard header"
+			],
+			[
+				"l",
+				"longestPalindrome\tfunction"
+			],
+			[
+				"S",
+				"SGDRegressor\tclass"
+			],
+			[
+				"grd",
+				"gird_clf\tstatement"
+			],
+			[
+				"C",
+				"GridSearchCV\tclass"
+			],
+			[
+				"Tur",
+				"Turmite\tclass"
+			],
+			[
+				"Turtel",
+				"TurmiteWorld\tclass"
+			],
+			[
+				"cro",
+				"cross_val_score\tfunction"
+			],
+			[
+				"mo",
+				"model_selection\tmodule"
+			],
+			[
+				"cr",
+				"create_X\tfunction"
+			],
+			[
+				"if",
+				"ifmain\tif __name__ == '__main__'"
+			],
+			[
+				"pl",
+				"plt\tmodule"
+			],
+			[
+				"a",
+				"append\tfunction"
+			],
+			[
+				"fin",
+				"final_date\tstatement"
+			],
+			[
+				"col",
+				"column\tstatement"
+			],
+			[
+				"en",
+				"encoded_data\tstatement"
+			],
+			[
+				"stu",
+				"students_list\tstatement"
+			],
+			[
+				"to_xl",
+				"to_excel\tfunction"
+			],
+			[
+				"fi",
+				"find_all\tfunction"
+			],
+			[
+				"cont",
+				"content"
+			],
+			[
+				"sr",
+				"string\tfunction"
+			],
+			[
+				"con",
+				"content"
+			],
+			[
+				"tu",
+				"turn\tstatement"
+			],
+			[
+				"main",
+				"main_content\tstatement"
+			],
+			[
+				"lin",
+				"link_list\tstatement"
+			],
+			[
+				"mai",
+				"main_content\tstatement"
+			],
+			[
+				"strings",
+				"string.h\tstandard header (deprecated)"
+			],
+			[
+				"str",
+				"string"
+			],
+			[
+				"io",
+				"iomanip\tstandard header"
+			],
+			[
+				"fil",
+				"file_base_name"
+			],
+			[
+				"file_",
+				"file_path"
+			],
+			[
+				"wor",
+				"word_map\tstatement"
+			],
+			[
+				"wo",
+				"word_map\tstatement"
+			],
+			[
+				"ge",
+				"get_code\tfunction"
+			],
+			[
+				"len",
+				"lenth\tparam"
+			],
+			[
+				"Ima",
+				"ImageDraw\tmodule"
+			],
+			[
+				"print",
+				"print_data"
+			],
+			[
+				"img",
+				"img_url\tstatement"
+			],
+			[
+				"pa",
+				"page_url\tstatement"
+			],
+			[
+				"page",
+				"PAGES_list\tstatement"
+			],
+			[
+				"line",
+				"LinearRegression\tclass"
+			],
+			[
+				"mode",
+				"model_number\tstatement"
+			],
+			[
+				"tre",
+				"tree_list"
+			],
+			[
+				"test",
+				"test1"
+			],
+			[
+				"tree",
+				"tree_list\tstatement"
+			],
+			[
+				"model",
+				"tree_model"
+			],
+			[
+				"te",
+				"temp\tstatement"
+			],
+			[
+				"index",
+				"indexs"
+			],
+			[
+				"pro",
+				"property_1"
+			],
+			[
+				"two",
+				"two_choice_problem"
+			],
+			[
+				"coun",
+				"count_i\tstatement"
+			],
+			[
+				"w",
+				"weak_indexs\tstatement"
+			],
+			[
+				"g",
+				"gamma\tparam"
+			],
+			[
+				"max",
+				"max_depth\tparam"
+			],
+			[
+				"sub",
+				"subsample\tparam"
+			],
+			[
+				"min",
+				"min_child_weight\tparam"
+			],
+			[
+				"le",
+				"leisure_1"
+			],
+			[
+				"res",
+				"result\tstatement"
+			],
+			[
+				"pub",
+				"public_service_2"
+			],
+			[
+				"m_",
+				"m_work_14"
+			],
+			[
+				"fam",
+				"family_status"
+			],
+			[
+				"fami",
+				"family_m"
+			],
+			[
+				"rad",
+				"rad_list"
+			],
+			[
+				"ind",
+				"indexs\tstatement"
+			],
+			[
+				"cre",
+				"createDataSet\tfunction"
+			],
+			[
+				"trai",
+				"train\tstatement"
+			],
+			[
+				"tra",
+				"train\tstatement"
+			],
+			[
+				"cou",
+				"Counter"
+			],
+			[
+				"train",
+				"train_data\tparam"
+			],
+			[
+				"tar",
+				"train_data\tparam"
+			],
+			[
+				"tr",
+				"train_data\tstatement"
+			],
+			[
+				"idn",
+				"index2"
+			],
+			[
+				"mat",
+				"matplotlib\tmodule"
+			],
+			[
+				"m",
+				"most_common\tfunction"
+			],
+			[
+				"k",
+				"k_colse\tfunction"
+			],
+			[
+				"to",
+				"to_csv\tfunction"
+			],
+			[
+				"li",
+				"LinearRegression"
+			],
+			[
+				"del",
+				"del_list\tstatement"
+			],
+			[
+				"ha",
+				"happiness"
+			],
+			[
+				"ap",
+				"append"
+			],
+			[
+				"lis",
+				"list1\tstatement"
+			],
+			[
+				"edu_",
+				"edu_Y\tstatement"
+			],
+			[
+				"P",
+				"Process\tmodule"
+			],
+			[
+				"mul",
+				"mult_process\tstatement"
+			],
+			[
+				"s1",
+				"s1_dumped\tstatement"
+			],
+			[
+				"du",
+				"dumps\tstatement"
+			],
+			[
+				"wri",
+				"write\tfunction"
+			],
+			[
+				"se",
+				"setter"
+			],
+			[
+				"sc",
+				"school"
+			],
+			[
+				"Me",
+				"MethodType\tclass"
+			],
+			[
+				"read",
+				"read_csv\tfunction"
+			],
+			[
+				"ta",
+				"train\tstatement"
+			],
+			[
+				"Q",
+				"Questions\tstatement"
+			],
+			[
+				"ev",
+				"eva_1\tstatement"
+			],
+			[
+				"eva",
+				"eva_0\tstatement"
+			],
+			[
+				"eval",
+				"evalresult\tstatement"
+			],
+			[
+				"name",
+				"Names"
+			],
+			[
+				"male",
+				"male_used_word\tstatement"
+			],
+			[
+				"names",
+				"names_list\tstatement"
+			],
+			[
+				"gend",
+				"gender_old\tstatement"
+			],
+			[
+				"get",
+				"get_percent\tparam"
+			],
+			[
+				"nam",
+				"names_list"
+			]
+		]
+	},
+	"buffers":
+	[
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+		[
+			[
+				[
+					"Packages/C++/C++ Single File.sublime-build",
+					""
+				],
+				[
+					"Packages/C++/C++ Single File.sublime-build",
+					"Run"
+				]
+			],
+			[
+				"Packages/C++/C++ Single File.sublime-build",
+				"Run"
+			]
+		],
+		[
+			[
+				[
+					"Packages/Default/Syntax Tests.sublime-build",
+					""
+				],
+				[
+					"Packages/Default/Syntax Tests.sublime-build",
+					"All Syntaxes"
+				],
+				[
+					"Packages/Default/Syntax Tests.sublime-build",
+					"Performance"
+				],
+				[
+					"Packages/Default/Syntax Tests.sublime-build",
+					"Regex Compatibility"
+				]
+			],
+			[
+				"Packages/Default/Syntax Tests.sublime-build",
+				""
+			]
+		],
+		[
+			[
+				[
+					"Packages/Python/Python.sublime-build",
+					""
+				],
+				[
+					"Packages/Python/Python.sublime-build",
+					"Syntax Check"
+				]
+			],
+			[
+				"Packages/Python/Python.sublime-build",
+				""
+			]
+		],
+		[
+			[
+				[
+					"Packages/Python/Python.sublime-build",
+					""
+				],
+				[
+					"Packages/Python/Python.sublime-build",
+					"Syntax Check"
+				],
+				[
+					"Packages/SublimeREPL/sublimerepl_build_system_hack.sublime-build",
+					""
+				]
+			],
+			[
+				"Packages/SublimeREPL/sublimerepl_build_system_hack.sublime-build",
+				""
+			]
+		],
+		[
+			[
+				[
+					"Packages/Python/Python.sublime-build",
+					""
+				],
+				[
+					"Packages/Python/Python.sublime-build",
+					"Syntax Check"
+				],
+				[
+					"Packages/User/Python3.sublime-build",
+					""
+				],
+				[
+					"Packages/User/untitled.sublime-build",
+					""
+				]
+			],
+			[
+				"Packages/User/Python3.sublime-build",
+				""
+			]
+		],
+		[
+			[
+				[
+					"Packages/User/CPP.sublime-build",
+					""
+				],
+				[
+					"Packages/User/CPP.sublime-build",
+					"Run"
+				]
+			],
+			[
+				"Packages/User/CPP.sublime-build",
+				"Run"
+			]
+		],
+		[
+			[
+				[
+					"Packages/User/g++.sublime-build",
+					""
+				],
+				[
+					"Packages/User/g++.sublime-build",
+					"Run"
+				]
+			],
+			[
+				"Packages/User/g++.sublime-build",
+				"Run"
+			]
+		]
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"p",
+				"Package Control: Disable Package"
+			],
+			[
+				"pa",
+				"Package Control: Install Package"
+			],
+			[
+				"en",
+				"Package Control: Enable Package"
+			],
+			[
+				"disabl",
+				"Package Control: Disable Package"
+			],
+			[
+				"enable",
+				"Package Control: Enable Package"
+			],
+			[
+				"pac ",
+				"Package Control: Disable Package"
+			],
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"in",
+				"Package Control: Install Package"
+			],
+			[
+				"ins",
+				"Indexing Status"
+			],
+			[
+				"theme",
+				"UI: Select Color Scheme"
+			],
+			[
+				"color",
+				"UI: Select Color Scheme"
+			],
+			[
+				"ui",
+				"UI: Select Theme"
+			],
+			[
+				"disab",
+				"Package Control: Disable Package"
+			],
+			[
+				"p dia",
+				"Package Control: Disable Package"
+			],
+			[
+				"Snippet: ",
+				"Snippet: Method"
+			],
+			[
+				"Package Control: ",
+				"Package Control: Remove Package"
+			],
+			[
+				"pckage",
+				"Package Control: Install Package"
+			],
+			[
+				" p i",
+				"Package Control: Install Package"
+			],
+			[
+				"anaconda ",
+				"Anaconda: Run Current File Tests"
+			],
+			[
+				"anaconda",
+				"Anaconda: Run Current Test"
+			],
+			[
+				"diabl",
+				"Package Control: Disable Package"
+			],
+			[
+				"package en",
+				"Package Control: Enable Package"
+			],
+			[
+				"Package Control: i",
+				"Package Control: Disable Package"
+			],
+			[
+				"pi",
+				"Package Control: Install Package"
+			],
+			[
+				"p i",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 0.0
+	},
+	"console":
+	{
+		"height": 136.0,
+		"history":
+		[
+			"4",
+			"44890573",
+			"conda update pandas",
+			"import math",
+			"import pandas",
+			"pandas",
+			"python",
+			"import panda",
+			"sudo pip install numpy",
+			"sudo sudo pip install numpy",
+			"exit()",
+			"pip install panda",
+			"$ autopep8 --in-place --aggressive --aggressive <filename>",
+			"exit()",
+			"1==1",
+			"h",
+			"h=hash()",
+			"$ autopep8 --in-place --aggressive --aggressive &lt;filename&gt;",
+			"import urllib.request,os; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); open(os.path.join(ipp, pf), 'wb').write(urllib.request.urlopen( 'http://sublime.wbond.net/' + pf.replace(' ','%20')).read())"
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/Users/lulu/Desktop/Python/app-ideas/main.py",
+		"/Users/lulu/Desktop/Python/统计学习方法/KNN_mat.py",
+		"/Users/lulu/Desktop/Python/统计学习方法/kdd_KNN.py",
+		"/Users/lulu/Desktop/Python/Transfer_Learning/kdd_KNN.py",
+		"/Users/lulu/Desktop/Git/the-craft-of-selfteaching/mycode.py",
+		"/Users/lulu/Desktop/java/Puppy.java",
+		"/Users/lulu/Desktop/java/HelloWorld.java",
+		"/Users/lulu/Desktop/java/hello.java",
+		"/Users/lulu/Desktop/Python/Transfer_Learning/Class node(object).py",
+		"/Users/lulu/Desktop/C++/_string.cpp",
+		"/Users/lulu/Downloads/kivy-1.10.0/examples/demo/pictures/main.py",
+		"/Users/lulu/Downloads/kivy-1.10.0/examples/settings/main.py",
+		"/Users/lulu/Downloads/kivy-1.10.0/examples/android/takepicture/main.py",
+		"/Users/lulu/Desktop/Python/app-ideas/buildozer.spec",
+		"/Users/lulu/Desktop/Python/app-ideas/pack/kivy-sdk-packager/osx/Kivy3.App/Contents/Frameworks/python/3.6.5/lib/python3.6/site-packages/Cython/Compiler/Main.py",
+		"/Users/lulu/Desktop/Python/app-ideas/pack/kivy-sdk-packager/osx/Kivy3.App/Contents/Frameworks/python/3.6.5/lib/python3.6/test/libregrtest/main.py",
+		"/Users/lulu/Downloads/kivy-1.10.0/examples/android/compass/main.py",
+		"/Users/lulu/Downloads/kivy-1.10.0/setup.py",
+		"/Users/lulu/Desktop/Python/app-ideas/cal.spec",
+		"/Users/lulu/Desktop/Python/app-ideas/Bin2dec.py",
+		"/Users/lulu/Desktop/C++/q.cpp",
+		"/Users/lulu/Desktop/C++/f.cpp",
+		"/Users/lulu/Desktop/Python/app-ideas/Cal.spec",
+		"/Users/lulu/Desktop/Python/app-ideas/setup.py",
+		"/Users/lulu/Desktop/Python/app-ideas/Cal.py",
+		"/Users/lulu/Desktop/Python/double_link_list.py",
+		"/Users/lulu/Desktop/Python/test.py",
+		"/Users/lulu/Downloads/PyQt5_gpl-5.11.3/designer/pluginloader.cpp",
+		"/Users/lulu/Downloads/PyQt5_gpl-5.11.3/__init__.py",
+		"/Users/lulu/Desktop/C++/aa.cpp",
+		"/Users/lulu/Desktop/Python/show me the code/counting_word_re/counting.py",
+		"/Users/lulu/Desktop/Python/app-ideas/_tkinter.py",
+		"/Users/lulu/Desktop/Python/Transfer_Learning/adult.names",
+		"/Users/lulu/Desktop/Python/Transfer_Learning/adult.py",
+		"/Users/lulu/Downloads/adult.names",
+		"/Users/lulu/Downloads/adult.data",
+		"/Users/lulu/Downloads/adult.test",
+		"/Users/lulu/Downloads/Index",
+		"/Users/lulu/Downloads/old.adult.names",
+		"/Users/lulu/Desktop/Python/happiness/PCA_happiness_ver3.py",
+		"/Users/lulu/Desktop/Python/happiness/happiness_ver3.py",
+		"/Users/lulu/Desktop/Python/PCA.py",
+		"/Users/lulu/Desktop/Python/Hands on sklearn and Tesorflow/Softmax.py",
+		"/Users/lulu/Desktop/Python/programme.py",
+		"/Users/lulu/Desktop/Python/Regular_Expression.py",
+		"/Users/lulu/Desktop/Python/Regular_Expression",
+		"/Users/lulu/Library/Application Support/Sublime Text 3/Packages/User/SublimeLinter.sublime-settings",
+		"/Users/lulu/Library/Application Support/Sublime Text 3/Packages/SublimeLinter/SublimeLinter.sublime-settings",
+		"/Users/lulu/Desktop/Downloads/手机刷机/XZP 国行9.0/adb&fastboot/platform-tools/systrace/catapult/telemetry/third_party/modulegraph/modulegraph_tests/testpkg-regr3/mypkg/distutils/ccompiler.py",
+		"/Users/lulu/Desktop/C++/tower.cpp",
+		"/Users/lulu/Desktop/C++/baha.cpp",
+		"/Users/lulu/Desktop/C++/test_template.cpp",
+		"/Users/lulu/Desktop/C++/test_template.py",
+		"/Users/lulu/Desktop/Python/Zig_new.py",
+		"/Users/lulu/Desktop/Python/string_long.py",
+		"/Users/lulu/Desktop/Python/happiness/happiness_ver3_new.py",
+		"/Users/lulu/Downloads/Estimation-of-House-Price-in-Guangzhou-master/K_Means.py",
+		"/Users/lulu/Desktop/Python/Hands on sklearn and Tesorflow/MNIST/class_math.py",
+		"/Users/lulu/Desktop/Python/Hands on sklearn and Tesorflow/class_math.py",
+		"/Users/lulu/Desktop/Python/happiness/args_xgboost_happiness_ver2_complete.py",
+		"/Users/lulu/Desktop/Python/happiness/double_link_list.py",
+		"/Users/lulu/Desktop/Python/Hands on sklearn and Tesorflow/untitled",
+		"/Users/lulu/Desktop/Python/turtle.py",
+		"/Users/lulu/Downloads/article.py",
+		"/Users/lulu/Desktop/Python/happiness/new.py",
+		"/Users/lulu/Desktop/Python/happiness/mixed_happiness.py",
+		"/Users/lulu/Desktop/Python/Hands on sklearn and Tesorflow/get_MNIST.py",
+		"/private/var/folders/q0/mf6_p66s061bf0yhtyly_1680000gn/T/第一章_数学基础.md",
+		"/private/var/folders/q0/mf6_p66s061bf0yhtyly_1680000gn/T/第十一章_迁移学习.md",
+		"/Users/lulu/Desktop/Python/happiness/happiness_rad+linear.py",
+		"/Users/lulu/Desktop/Python/Hands on sklearn and Tesorflow/get.py",
+		"/Users/lulu/Desktop/Python/zhengqi/ver1.py",
+		"/Users/lulu/Desktop/Python/show me the code/change_resolution/main.py",
+		"/Users/lulu/Desktop/Python/show me the code/_fee/untitled.py",
+		"/Users/lulu/Desktop/Python/show me the code/_fee/untitled",
+		"/Users/lulu/Desktop/Python/show me the code/students_txt_xlsx/txt_xlsx.py",
+		"/Users/lulu/Desktop/Python/show me the code/numbers_txt_xlsx/txt_xlsx.py",
+		"/Users/lulu/Desktop/Python/show me the code/city_txt_xlsx/txt_xlsx.py",
+		"/Users/lulu/Desktop/Python/show me the code/txt_xlsx/txt_xlsx.py",
+		"/Users/lulu/Desktop/Python/show me the code/tieba_img/tieba_img.py",
+		"/Users/lulu/Desktop/Python/show me the code/beauty_spider/beautiful_img.py",
+		"/Users/lulu/Desktop/Python/show me the code/未命名文件夹/beautiful_img.py",
+		"/Users/lulu/Desktop/Python/show me the code/spider_img/beautiful_img.py",
+		"/Users/lulu/Desktop/Python/show me the code/html_re/test.py",
+		"/Users/lulu/Desktop/Python/show me the code/html_re/link&main.py",
+		"/Users/lulu/Desktop/Python/show me the code/html/link&main.py",
+		"/Users/lulu/Desktop/Python/show me the code/html/programme.py",
+		"/Users/lulu/Desktop/Python/SSH/connect.py",
+		"/Users/lulu/Desktop/Python/SSH/change_port.py",
+		"/Users/lulu/Desktop/Python/show me the code/html/link&mai.py",
+		"/Users/lulu/Desktop/Git/crawlers/crawl3/crawl3/settings.py",
+		"/Users/lulu/Desktop/Git/crawlers/crawl3/crawl3/pipelines.py",
+		"/Users/lulu/Desktop/Git/crawlers/crawl3/crawl3/items.py",
+		"/Users/lulu/Desktop/Git/crawlers/crawl3/crawl3/__init__.py",
+		"/Users/lulu/Desktop/Git/ziroom_realtime_spider/ziroom.py",
+		"/Users/lulu/Desktop/gui-config.json",
+		"/Users/lulu/Desktop/Git/USTC-Course/操作系统原理与设计/notes/mbinary/linux-file-io.md",
+		"/Users/lulu/Desktop/Python/spider.py",
+		"/Users/lulu/Desktop/Python/import random.py",
+		"/Users/lulu/Desktop/C++/linked_list.cpp",
+		"/Users/lulu/Desktop/test.py",
+		"/Users/lulu/Desktop/C++/Untitled-1.cpp",
+		"/Users/lulu/Desktop/Python/show me the code/counting_words/counting.py",
+		"/Users/lulu/Desktop/Python/show me the code/head_image/head_p_num.py",
+		"/Users/lulu/Desktop/Python/show me the code/counting_words/hash.py",
+		"/Users/lulu/Desktop/Python/show me the code/counting_words/sql.py",
+		"/Users/lulu/Desktop/Python/show me the code/mysql/sql.py",
+		"/Users/lulu/Desktop/Python/show me the code/active_code/active_code.py",
+		"/Users/lulu/Desktop/Python/show me the code/head_image/qq头像.py",
+		"/Users/lulu/Desktop/Python/show me the code/qq头像.py",
+		"/Users/lulu/Desktop/Python/linked_list.py",
+		"/Users/lulu/Desktop/C++/hello.cpp",
+		"/Users/lulu/Desktop/C++/first.cpp",
+		"/Users/lulu/Desktop/C++/io.cpp",
+		"/Users/lulu/Desktop/untitled.java",
+		"/Users/lulu/Desktop/Python/test_muti_processing.py",
+		"/Users/lulu/Desktop/Python/yanghuisanjiao的旧版.py",
+		"/Users/lulu/Desktop/Python/linked_list_old.py",
+		"/Users/lulu/Downloads/Bilibili_video_download-master/bilibili_video_download.py",
+		"/Users/lulu/Downloads/hello-old-driver-master/archives/resource_list.json-2018-05-23-000004",
+		"/Users/lulu/Downloads/hello-old-driver-master/find_magnets.py",
+		"/Users/lulu/Downloads/hello-old-driver-master/resource_list.json",
+		"/Users/lulu/Desktop/Python/happiness/index_flited_xgboost_happiness_ver2_complete.py",
+		"/Users/lulu/Desktop/Python/happiness/xgboost_happiness_ver2_complete.py",
+		"/Users/lulu/Desktop/Python/happiness/happiness_ver2_complete.py",
+		"/Users/lulu/Downloads/test.py",
+		"/Users/lulu/Desktop/Python/happiness/L_happiness_complete.py",
+		"/Users/lulu/Desktop/Python/bike/bike.py"
+	],
+	"find":
+	{
+		"height": 39.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 26.0
+	},
+	"input":
+	{
+		"height": 38.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.SublimeLinter":
+	{
+		"height": 0.0
+	},
+	"output.autopep8":
+	{
+		"height": 0.0
+	},
+	"output.exec":
+	{
+		"height": 204.0
+	},
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"output.help":
+	{
+		"height": 108.0
+	},
+	"pinned_build_system": "Packages/User/Python3.sublime-build",
+	"project": "KNN_mat.sublime-project",
+	"replace":
+	{
+		"height": 48.0
+	},
+	"save_all_on_build": false,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 380.0
+	},
+	"select_symbol":
+	{
+		"height": 32.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 576.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": false,
+	"show_open_files": true,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 150.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+		"max_columns": 2
+	}
+}
