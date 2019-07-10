@@ -125,7 +125,7 @@ if __name__ == '__main__':
     import time
     t1=time.time()
     k=random.randint(1000,8500)
-    d=k+5
+    d=k+100
     m=250
     from sklearn.neighbors import KNeighborsClassifier
     clf=KNeighborsClassifier(n_neighbors=1)
