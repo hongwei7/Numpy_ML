@@ -54,7 +54,7 @@ def claculate_max_g(data, index_list, alpha): #alpha为预剪枝参数
     H_D = claculate_H_D(data)
     for index in index_list:
         g_D_index = (H_D - claculate_H_D_A(data, index)) 
-        #+ alpha * (len(Counter(data.x.T[index]).keys()) - 1) #预剪枝
+        + alpha * (len(Counter(data.x.T[index]).keys()) - 1) #预剪枝
         if max_g < g_D_index:
             max_index = index
             max_g = g_D_index
@@ -71,7 +71,7 @@ def create_tree(data, index_list, alpha,_e=0.07):
         f_index, f_g = claculate_max_g(data, index_list,alpha)
         if f_g <= _e:
             return node(data, index_list)#返回单节点树
-        print(f_index, index_list)
+        #print(f_index, index_list) #显示分类条件
         index_list.remove(f_index)
         branch = condition_node(
             f_index=f_index, index_list=index_list, data=data,alpha=alpha)
@@ -81,7 +81,7 @@ def create_tree(data, index_list, alpha,_e=0.07):
 def predict(root, x):
     result = []
     for xi in x:
-        locate = root
+        locate = root #locate作为指针
         while(1):
             try:
                 locate = locate.branches[xi[locate.f_index]]
@@ -116,7 +116,7 @@ def main():
     data, index_list = load_data()
     test_data, _index_list = load_data('adult.test', condition=' >50K.\n')
     t1=time.time()
-    decision_tree = create_tree(data, index_list, 0.0001,0.07)
+    decision_tree = create_tree(data, index_list, 0.001,0.07)
     pre_y = predict(decision_tree, test_data.x)
     print('test accuracy:',(np.array(pre_y) == test_data.y).sum() / len(pre_y))
     t2=time.time()

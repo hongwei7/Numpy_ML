@@ -2,7 +2,7 @@ from collections import Counter
 import numpy as np
 import time
 
-class _data(object):
+class _data(object):#自定义数据集类型
     def __init__(self, x, y):
         self.x = x
         self.y = y
@@ -57,7 +57,7 @@ def claculate_max_g(data, index_list, alpha): #alpha为预剪枝参数
     H_D = claculate_H_D(data)
     for index in index_list:
         g_D_index = (H_D - claculate_H_D_A(data, index)) 
-        #+ alpha * (len(Counter(data.x.T[index]).keys()) - 1) #预剪枝
+        + alpha * (len(Counter(data.x.T[index]).keys()) - 1) #预剪枝
         if max_g < g_D_index:
             max_index = index
             max_g = g_D_index
@@ -102,23 +102,25 @@ class Bagging_tree(object):
         self.e=e
         self.train()
     def train(self):
-        permutation = np.random.permutation(self.data.x.shape[0])
-        self.data.x=self.data.x[permutation,:]
-        self.data.y=self.data.y[permutation]
         for i in range(self.num):
+            permutation = np.random.permutation(self.data.x.shape[0])
+            self.data.x=self.data.x[permutation,:]
+            self.data.y=self.data.y[permutation]
             index=[]
             for j in self.index_list:
                 index.append(j)
             front,back=len(self.data.x)//self.num*i,len(self.data.x)//self.num*(i+1)
             data_t=_data(self.data.x[front:back],self.data.y[front:back])
-            self.clf_list.append(tree(data_t,index,self.alpha,self.e))
-            pre_yt=predict(self.clf_list[-1].clf,data_t.x)
-            print('single predict:',(np.array(pre_yt) == data_t.y).sum() / len(pre_yt))
+            clf=(tree(data_t,index,self.alpha,self.e))
+            pre_yt=predict(clf.clf,data_t.x)
+            if (np.array(pre_yt) == data_t.y).sum() / len(pre_yt)>0.8:
+                self.clf_list.append(clf)
+                print('single predict:',(np.array(pre_yt) == data_t.y).sum() / len(pre_yt))
     def predict(self,x):
         #print(self.clf_list)
         result=np.array(np.zeros([len(x),1])).reshape(len(x))
         for clf in self.clf_list:
-            result=result+np.array(predict(clf.clf,x))/self.num
+            result=result+np.array(predict(clf.clf,x))/len(self.clf_list)
         return np.array(result)>=0.5
 
 
@@ -147,7 +149,7 @@ def main():
     data, index_list = load_data()
     test_data, _index_list = load_data('adult.test', condition=' >50K.\n')
     t1=time.time()
-    bagging_tree=Bagging_tree(data,index_list,7,0.0001,0.01)
+    bagging_tree=Bagging_tree(data,index_list,20,0.001,0.0007)
     pre_y=bagging_tree.predict(data.x)
     print('bagging train accuracy:',(np.array(pre_y) == data.y).sum() / len(pre_y))
     test_pre_y=bagging_tree.predict(test_data.x)
