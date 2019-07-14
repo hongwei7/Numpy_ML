@@ -123,41 +123,33 @@ class Bagging_tree(object):
 def load_data(file_name='adult.data', condition=' >50K\n'):
     print('loading data... ' + file_name)
     file = open(file_name)
-    r_X = []
-    r_y = []
+    r_X,r_y= [],[]
     for line in file.readlines():
         items = str(line).split(',')
         r_X.append(items[:-1])
         r_y.append(items[-1] == condition)
     del r_X[-1], r_y[-1]
-    y = np.array(r_y).astype('int')
-    X = np.array(r_X)
+    X,y = np.array(r_X).T,np.array(r_y).astype('int')
+    for i in [0,2,4,10,11,12]:  # 连续变量离散化
+        row=X[i].astype(int)
+        X[i] = (row>np.median(row)).astype(int).astype(str)
     X = X.T
-    for i, j in zip([0, 2, 12], [10, 10000, 5]):  # 连续变量离散化
-        row = X[i].astype(int)
-        row = row - row % j
-        X[i] = row.astype(str)
-    X = X.T
-
     print('done!')
     print(file_name + ' size:', X.shape)
     data = _data(X, y)
-    index_list = (list(range(data.x.shape[1])))
+    index_list = list(range(data.x.shape[1]))
     return data, index_list
-
-
         
 def main():
     data, index_list = load_data()
     test_data, _index_list = load_data('adult.test', condition=' >50K.\n')
     t1=time.time()
-    bagging_tree=Bagging_tree(data,index_list,5,0.0,0.01)
+    bagging_tree=Bagging_tree(data,index_list,7,0.0001,0.01)
     pre_y=bagging_tree.predict(data.x)
     print('bagging train accuracy:',(np.array(pre_y) == data.y).sum() / len(pre_y))
     test_pre_y=bagging_tree.predict(test_data.x)
     print('bagging test accuracy:',(np.array(test_pre_y) == test_data.y).sum() / len(test_pre_y))
     t2=time.time()
     print('used_time:'+str(t2-t1)[:6]+'s')
-    # print(data.y.sum(),test_data.y.sum())
 if __name__ == '__main__':
     main()
