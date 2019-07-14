@@ -180,6 +180,8 @@ def main():
     pre_y = predict(decision_tree, test_data.x)
     print('accuracy:' + str(100 * ((np.array(pre_y) ==
                                     test_data.y).sum() / len(pre_y)))[:6] + '%')
+    print('error:' + str( (((np.array(pre_y) -
+                                    test_data.y)**2).sum() / len(pre_y)))[:6] )
     t2 = time.time()
     print('used_time:' + str(t2 - t1)[:6] + 's')
 

@@ -51,8 +51,7 @@ def claculate_max_g(data, index_list, alpha):
     max_g = 0
     H_D = claculate_H_D(data)
     for index in index_list:
-        g_D_index = (H_D - claculate_H_D_A(data, index)) \
-            + alpha * (len(Counter(data.x.T[index]).keys()) - 1)
+        g_D_index = (H_D - claculate_H_D_A(data, index)) + alpha * (len(Counter(data.x.T[index]).keys()) - 1)
         if max_g < g_D_index:
             max_index = index
             max_g = g_D_index
@@ -61,20 +60,19 @@ def claculate_max_g(data, index_list, alpha):
     return max_index, max_g
 
 
-def create_tree(data, index_list, alpha, _e=0.1):
-    if len(Counter(data.y)) <= 1 or len(data.y) <= 1 or len(index_list) < 1:
+def create_tree(data, index_list, alpha,_e=0.07):
+    if len(Counter(data.y)) <= 1 or len(data.y) == 0 or len(index_list) < 1:
         return node(data, index_list)
     else:
-        f_index, f_g = claculate_max_g(data, index_list, alpha)
+        f_index, f_g = claculate_max_g(data, index_list,alpha)
         if f_g <= _e:
             return node(data, index_list)
         print(f_index, index_list)
         index_list.remove(f_index)
         branch = condition_node(
-            f_index=f_index, index_list=index_list, data=data, alpha=alpha)
+            f_index=f_index, index_list=index_list, data=data,alpha=alpha)
         branch.create_nodes(data)
         return branch
-
 
 def predict(root, x):
     result = []
@@ -107,10 +105,7 @@ def load_data(file_name='adult.data', condition=' >50K\n'):
         row = row - row % j
         X[i] = row.astype(str)
     X = X.T
-    '''
-    X=X[:5000]
-    y=y[:5000]
-    '''
+
     print('done!')
     print(file_name + ' size:', X.shape)
     data = s_data(X, y)
@@ -122,7 +117,7 @@ def main():
     data, index_list = load_data()
     test_data, _index_list = load_data('adult.test', condition=' >50K.\n')
     t1=time.time()
-    decision_tree = create_tree(data, index_list, 0.2)
+    decision_tree = create_tree(data, index_list, 0.,0.07)
     pre_y = predict(decision_tree, test_data.x)
     print((np.array(pre_y) == test_data.y).sum() / len(pre_y))
     t2=time.time()

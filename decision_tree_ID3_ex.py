@@ -28,8 +28,7 @@ class condition_node(object):
             self.branches[f] = create_tree(s_data(
                 data.x[data.x.T[self.f_index] == f], data.y[data.x.T[self.f_index] == f]), self.index_list)
 
-    def judge(self, x):
-        return self.data_list[x[self.f_index]]
+
 
 
 def claculate_H_D(data):
@@ -90,43 +89,44 @@ def predict(root, x):
     return result
 
 
-def load_data():
-    print('loading data...')
-    file = open('adult.data')
+def load_data(file_name='adult.data', condition=' >50K\n'):
+    print('loading data... ' + file_name)
+    file = open(file_name)
     r_X = []
     r_y = []
     for line in file.readlines():
         items = str(line).split(',')
         r_X.append(items[:-1])
-        r_y.append(items[-1] == ' >50K\n')
-    del r_X[32561], r_y[32561]
+        r_y.append(items[-1] == condition)
+    del r_X[-1], r_y[-1]
     y = np.array(r_y).astype('int')
     X = np.array(r_X)
     X = X.T
-    for i, j in zip([0, 2, 12], [15, 10000, 8]):
+    for i, j in zip([0, 2, 12], [10, 10000, 8]):  # 连续变量离散化
         row = X[i].astype(int)
         row = row - row % j
         X[i] = row.astype(str)
-        print(X[i])
     X = X.T
+
     print('done!')
-    number = 30000
-    X_, y_ = X[:number], y[:number]
-    print(X_.shape, y_.shape)
-    data = s_data(X_, y_)
+    print(file_name + ' size:', X.shape)
+    data = s_data(X, y)
     index_list = (list(range(data.x.shape[1])))
-    x = X[30000:35500]
-    y = y[30000:35500]
-    return data, index_list, x, y
+    return data, index_list
 
 
-
+import time
 def main():
-    data, index_list, x, y = load_data()
+    data, index_list = load_data()
+    test_data, _index_list = load_data('adult.test', condition=' >50K.\n')
+    t1=time.time()
     decision_tree = create_tree(data, index_list)
-    pre_y = predict(decision_tree, x)
-    print((np.array(pre_y) == y).sum() / len(y))
-
+    pre_y = predict(decision_tree, test_data.x)
+    print((np.array(pre_y) == test_data.y).sum() / len(pre_y))
+    t2=time.time()
+    print('used_time:'+str(t2-t1)[:6]+'s')
+    return((np.array(pre_y) == test_data.y).sum() / len(pre_y))
+    # print(data.y.sum(),test_data.y.sum())
 
 if __name__ == '__main__':
     main()
