@@ -6,19 +6,19 @@ class _data(object):
     def __init__(self, x, y):
         self.x = x
         self.y = y
-class tree(object):
+class tree(object):#决策树
     def __init__(self, data,index_list,alpha,e):
         self.clf = create_tree(data,index_list,alpha,e)
         
 
-class node(object):
+class node(object):#单节点
     def __init__(self, data, index_list):
         self.data = data
         self.clas = Counter(data.y).most_common()[0][0]
         self.index_list = index_list
 
 
-class condition_node(object):
+class condition_node(object):#非单节点
     def __init__(self, f_index, index_list, data, alpha):
         self.alpha = alpha
         self.data = data
@@ -30,10 +30,12 @@ class condition_node(object):
         self.branches = dict()
         for f in set(data.x.T[self.f_index]):
             self.branches[f] = create_tree(_data(
-                data.x[data.x.T[self.f_index] == f], data.y[data.x.T[self.f_index] == f]), self.index_list, alpha=self.alpha)
+                data.x[data.x.T[self.f_index] == f], 
+                data.y[data.x.T[self.f_index] == f]), 
+            self.index_list, alpha=self.alpha)
 
 
-def claculate_H_D(data):
+def claculate_H_D(data):#计算信息熵
     H_D = 0
     for yi in set(data.y):
         Ck_D = (data.y == yi).sum() / len(data.y)
@@ -41,7 +43,7 @@ def claculate_H_D(data):
     return H_D
 
 
-def claculate_H_D_A(data, A):
+def claculate_H_D_A(data, A):#计算条件熵
     H_D_A = 0
     for a in set(data.x.T[A]):
         H_D_A += (data.x.T[A] == a).sum() / len(data.y) * claculate_H_D(
@@ -49,19 +51,20 @@ def claculate_H_D_A(data, A):
     return H_D_A
 
 
-def claculate_max_g(data, index_list, alpha):
+def claculate_max_g(data, index_list, alpha): #alpha为预剪枝参数
     max_index = index_list[0]
     max_g = 0
     H_D = claculate_H_D(data)
     for index in index_list:
-        g_D_index = (H_D - claculate_H_D_A(data, index)) + alpha * (len(Counter(data.x.T[index]).keys()) - 1)
+        g_D_index = (H_D - claculate_H_D_A(data, index)) 
+        #+ alpha * (len(Counter(data.x.T[index]).keys()) - 1) #预剪枝
         if max_g < g_D_index:
             max_index = index
             max_g = g_D_index
     if max_g != 0:
-        1#print('max_g:', max_g)
+        pass
+        #print('max_g:', max_g) #显示信息增益具体值
     return max_index, max_g
-
 
 def create_tree(data, index_list, alpha,_e=0.07):
     if len(Counter(data.y)) <= 1 or len(data.y) == 0 or len(index_list) < 1:
