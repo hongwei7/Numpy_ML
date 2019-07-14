@@ -2,11 +2,14 @@ from collections import Counter
 import numpy as np
 import time
 
-class s_data(object):
+class _data(object):
     def __init__(self, x, y):
         self.x = x
         self.y = y
-
+class tree(object):
+    def __init__(self, data,index_list,alpha,e):
+        self.clf = create_tree(data,index_list,alpha,e)
+        
 
 class node(object):
     def __init__(self, data, index_list):
@@ -26,7 +29,7 @@ class condition_node(object):
     def create_nodes(self, data):
         self.branches = dict()
         for f in set(data.x.T[self.f_index]):
-            self.branches[f] = create_tree(s_data(
+            self.branches[f] = create_tree(_data(
                 data.x[data.x.T[self.f_index] == f], data.y[data.x.T[self.f_index] == f]), self.index_list, alpha=self.alpha)
 
 
@@ -42,7 +45,7 @@ def claculate_H_D_A(data, A):
     H_D_A = 0
     for a in set(data.x.T[A]):
         H_D_A += (data.x.T[A] == a).sum() / len(data.y) * claculate_H_D(
-            s_data(data.x[data.x.T[A] == a], data.y[data.x.T[A] == a]))
+            _data(data.x[data.x.T[A] == a], data.y[data.x.T[A] == a]))
     return H_D_A
 
 
@@ -56,8 +59,7 @@ def claculate_max_g(data, index_list, alpha):
             max_index = index
             max_g = g_D_index
     if max_g != 0:
-        1
-        #print('max_g:', max_g)
+        1#print('max_g:', max_g)
     return max_index, max_g
 
 
@@ -68,7 +70,7 @@ def create_tree(data, index_list, alpha,_e=0.07):
         f_index, f_g = claculate_max_g(data, index_list,alpha)
         if f_g <= _e:
             return node(data, index_list)
-        print(f_index, index_list)
+        #print(f_index, index_list)
         index_list.remove(f_index)
         branch = condition_node(
             f_index=f_index, index_list=index_list, data=data,alpha=alpha)
@@ -87,6 +89,36 @@ def predict(root, x):
                 break
     return result
 
+class Bagging_tree(object):
+    def __init__(self, data,index_list,num,alpha=0,e=0):
+        self.data = data
+        self.index_list=index_list
+        self.num=num
+        self.clf_list=[]
+        self.alpha=alpha
+        self.e=e
+        self.train()
+    def train(self):
+        permutation = np.random.permutation(self.data.x.shape[0])
+        self.data.x=self.data.x[permutation,:]
+        self.data.y=self.data.y[permutation]
+        for i in range(self.num):
+            index=[]
+            for j in self.index_list:
+                index.append(j)
+            front,back=len(self.data.x)//self.num*i,len(self.data.x)//self.num*(i+1)
+            data_t=_data(self.data.x[front:back],self.data.y[front:back])
+            self.clf_list.append(tree(data_t,index,self.alpha,self.e))
+            pre_yt=predict(self.clf_list[-1].clf,data_t.x)
+            print('single predict:',(np.array(pre_yt) == data_t.y).sum() / len(pre_yt))
+    def predict(self,x):
+        #print(self.clf_list)
+        result=np.array(np.zeros([len(x),1])).reshape(len(x))
+        for clf in self.clf_list:
+            result=result+np.array(predict(clf.clf,x))/self.num
+        return np.array(result)>=0.5
+
+
 
 def load_data(file_name='adult.data', condition=' >50K\n'):
     print('loading data... ' + file_name)
@@ -101,7 +133,7 @@ def load_data(file_name='adult.data', condition=' >50K\n'):
     y = np.array(r_y).astype('int')
     X = np.array(r_X)
     X = X.T
-    for i, j in zip([0, 2, 12], [10, 10000, 8]):  # 连续变量离散化
+    for i, j in zip([0, 2, 12], [10, 10000, 5]):  # 连续变量离散化
         row = X[i].astype(int)
         row = row - row % j
         X[i] = row.astype(str)
@@ -109,21 +141,23 @@ def load_data(file_name='adult.data', condition=' >50K\n'):
 
     print('done!')
     print(file_name + ' size:', X.shape)
-    data = s_data(X, y)
+    data = _data(X, y)
     index_list = (list(range(data.x.shape[1])))
     return data, index_list
 
 
+        
 def main():
     data, index_list = load_data()
     test_data, _index_list = load_data('adult.test', condition=' >50K.\n')
     t1=time.time()
-    decision_tree = create_tree(data, index_list, 0.,0.07)
-    pre_y = predict(decision_tree, test_data.x)
-    print((np.array(pre_y) == test_data.y).sum() / len(pre_y))
+    bagging_tree=Bagging_tree(data,index_list,5,0.0,0.01)
+    pre_y=bagging_tree.predict(data.x)
+    print('bagging train accuracy:',(np.array(pre_y) == data.y).sum() / len(pre_y))
+    test_pre_y=bagging_tree.predict(test_data.x)
+    print('bagging test accuracy:',(np.array(test_pre_y) == test_data.y).sum() / len(test_pre_y))
     t2=time.time()
     print('used_time:'+str(t2-t1)[:6]+'s')
-    return((np.array(pre_y) == test_data.y).sum() / len(pre_y))
     # print(data.y.sum(),test_data.y.sum())
 if __name__ == '__main__':
     main()
