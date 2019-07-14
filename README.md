@@ -21,4 +21,4 @@ UCI人口普查数据：该数据从美国1994年人口普查数据库抽取而�
 <strong>KNN_mat.py:</strong> </br> 
   test_accuracy:82.51% used_time:129.0s</br></br> 
 <strong>netrul_network(based on tensorflow).py</strong> :
-  </br> test_accuracy:84.786%
+  </br> test_accuracy:84.98%
