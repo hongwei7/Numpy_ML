@@ -11,7 +11,7 @@ UCI人口普查数据：该数据从美国1994年人口普查数据库抽取而�
 <strong>decision_tree_ID3_ex.py:</strong> </br> 
   test_accuracy:82.94%</br></br> 
 <strong>decision_tree_ID3_cut.py:</strong> </br> 
-  test_accuracy:83.05% used_time:1.8071s</br></br> 
+  test_accuracy:84.09% used_time:1.8071s</br></br> 
  <strong>decision_tree_ID3_cut_bagging.py:</strong> </br> 
   test_accuracy:82.06% used_time:2.4629s</br></br> 
 <strong>decision_tree_C4.5.py:</strong> </br>
