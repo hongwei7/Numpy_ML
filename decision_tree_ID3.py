@@ -105,7 +105,6 @@ def load_data(file_name='adult.data', condition=' >50K\n'):
         row=X[i].astype(int)
         X[i] = (row>np.median(row)).astype(int).astype(str)
     X = X.T
-    print('done!')
     print(file_name + ' size:', X.shape)
     data = _data(X, y)
     index_list = list(range(data.x.shape[1]))
@@ -116,12 +115,13 @@ def main():
     data, index_list = load_data()
     test_data, _index_list = load_data('adult.test', condition=' >50K.\n')
     t1=time.time()
-    decision_tree = create_tree(data, index_list, 0.001,0.07)
-    pre_y = predict(decision_tree, test_data.x)
-    print('test accuracy:',(np.array(pre_y) == test_data.y).sum() / len(pre_y))
+    decision_tree = create_tree(data, index_list, 0.001,0.0007)
+    pre_y = predict(decision_tree, data.x)
+    print('train accuracy:',(np.array(pre_y) == data.y).sum() / len(pre_y))
+    testpre_y = predict(decision_tree, test_data.x)
+    print('test accuracy:',(np.array(testpre_y) == test_data.y).sum() / len(testpre_y))
     t2=time.time()
     print('used_time:'+str(t2-t1)[:6]+'s')
-    return((np.array(pre_y) == test_data.y).sum() / len(pre_y))
 
 if __name__ == '__main__':
     main()

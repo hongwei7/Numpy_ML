@@ -115,7 +115,7 @@ class Bagging_tree(object):
             pre_yt=predict(clf.clf,data_t.x)
             if (np.array(pre_yt) == data_t.y).sum() / len(pre_yt)>0.8:
                 self.clf_list.append(clf)
-                print('single predict:',(np.array(pre_yt) == data_t.y).sum() / len(pre_yt))
+                print('single train predict:',(np.array(pre_yt) == data_t.y).sum() / len(pre_yt))
     def predict(self,x):
         #print(self.clf_list)
         result=np.array(np.zeros([len(x),1])).reshape(len(x))
@@ -139,7 +139,6 @@ def load_data(file_name='adult.data', condition=' >50K\n'):
         row=X[i].astype(int)
         X[i] = (row>np.median(row)).astype(int).astype(str)
     X = X.T
-    print('done!')
     print(file_name + ' size:', X.shape)
     data = _data(X, y)
     index_list = list(range(data.x.shape[1]))
