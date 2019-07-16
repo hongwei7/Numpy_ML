@@ -125,23 +125,6 @@ class Bagging_tree(object):
 
 
 
-def choose_divide_value(data, index):#选择最佳的分隔点
-    max_g = 0
-    divide_num=5
-    best_divide_value = data.x.T[0, 0]
-    values = list(set(data.x.T[index]))
-    values.sort()
-    for i in range(divide_num):
-        values[i]=values[len(values)//10*i]
-    values=values[:divide_num]
-    for x_, y_ in zip(values[:-1], values[1:]):
-        ai = int((int(x_) + int(y_)) / 2)
-        g =  claculate_H_D_A(data, index)
-        if g >= max_g:
-            max_g = g
-            best_divide_value = ai
-    return best_divide_value
-
 def load_data(file_name='adult.data', condition=' >50K\n'):
     print('loading data... ' + file_name)
     file = open(file_name)
@@ -154,17 +137,17 @@ def load_data(file_name='adult.data', condition=' >50K\n'):
     X,y = np.array(r_X).T,np.array(r_y).astype('int')
     for i in [0,2,4,10,11,12]:  # 连续变量离散化
         row=X[i].astype(int)
-        X[i] = (row>choose_divide_value(_data(X.T,y),i)).astype(int).astype(str)
+        X[i] = (row>np.median(row)).astype(int).astype(str)
     X = X.T
     print(file_name + ' size:', X.shape)
     data = _data(X, y)
     index_list = list(range(data.x.shape[1]))
     return data, index_list
-    
+        
 def main():
-    t1=time.time()
     data, index_list = load_data()
     test_data, _index_list = load_data('adult.test', condition=' >50K.\n')
+    t1=time.time()
     bagging_tree=Bagging_tree(data,index_list,20,0.001,0.0007)
     pre_y=bagging_tree.predict(data.x)
     print('bagging train accuracy:',(np.array(pre_y) == data.y).sum() / len(pre_y))
