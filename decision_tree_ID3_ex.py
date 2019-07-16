@@ -57,7 +57,8 @@ def claculate_max_g(data, index_list):
             max_index = index
             max_g = g_D_index
     if max_g!=0:
-        print('max_g:', max_g)
+        pass
+        #print('max_g:', max_g)
     return max_index, max_g
 
 
@@ -102,13 +103,11 @@ def load_data(file_name='adult.data', condition=' >50K\n'):
     y = np.array(r_y).astype('int')
     X = np.array(r_X)
     X = X.T
-    for i, j in zip([0, 2, 12], [10, 10000, 8]):  # 连续变量离散化
+    for i, j in zip([0, 2,10,11, 12], [10, 10000,5000,5000, 8]):  # 连续变量离散化
         row = X[i].astype(int)
         row = row - row % j
         X[i] = row.astype(str)
     X = X.T
-
-    print('done!')
     print(file_name + ' size:', X.shape)
     data = s_data(X, y)
     index_list = (list(range(data.x.shape[1])))
