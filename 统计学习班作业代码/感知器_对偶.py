@@ -35,6 +35,12 @@ class perceptron():
                 if self.predict(xi)!=y[i]:
                     all_divided=False
                     break
+def draw(clf):
+    plt.plot([3,4],[3,3],'rx')
+    plt.plot(1,1,'g+')
+    plt.plot([0,4],[(-clf.b-clf.w[0]*0)/clf.w[1],
+        (-clf.b-clf.w[0]*4)/clf.w[1]],'b')
+    plt.show()
 def main():
     x=np.array([[3,3],[4,3],[1,1]])
     y=np.array([1,1,-1])
@@ -44,10 +50,6 @@ def main():
     print('used_time:',time.time()-t1)
     for i,xi in enumerate(x):
         print(xi,clf.predict(xi),y[i])
-    plt.plot([3,4],[3,3],'r.')
-    plt.plot(1,1,'g.')
-    plt.plot([0,4],[(-clf.b-clf.w[0]*0)/clf.w[1],
-        (-clf.b-clf.w[0]*4)/clf.w[1]],'b')
-    plt.show()
+    draw(clf)
 if __name__ == '__main__':
     main()
