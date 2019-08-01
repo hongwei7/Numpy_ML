@@ -25,7 +25,9 @@ class condition_node(object):#非单节点
 
     def create_nodes(self, data):
         self.branches = dict()
-        for f in set(data.x.T[self.f_index]):
+        #print(self.index_list,self.f_index,set(data.x.T[self.f_index]))
+        for f in (set(data.x.T[self.f_index])):
+            #print(f,data.x[data.x.T[self.f_index] == f])
             self.branches[f] = create_tree(_data(
                 data.x[data.x.T[self.f_index] == f], 
                 data.y[data.x.T[self.f_index] == f]), 
@@ -36,14 +38,14 @@ def claculate_H_D(data):#计算信息熵
     H_D = 0
     for yi in set(data.y):
         Ck_D = (data.y == yi).sum() / len(data.y)
-        H_D += -Ck_D * np.log(Ck_D)
+        H_D = H_D -Ck_D * np.log(Ck_D)
     return H_D
 
 
 def claculate_H_D_A(data, A):#计算条件熵
     H_D_A = 0
     for a in set(data.x.T[A]):
-        H_D_A += (data.x.T[A] == a).sum() / len(data.y) * claculate_H_D(
+        H_D_A =H_D_A + (data.x.T[A] == a).sum() / len(data.y) * claculate_H_D(
             _data(data.x[data.x.T[A] == a], data.y[data.x.T[A] == a]))
     return H_D_A
 
@@ -90,53 +92,34 @@ def predict(root, x):
                 break
     return result
 
-def choose_divide_value(data, index):
-    max_g = 0
-    divide_num=5
-    best_divide_value = data.x.T[0, 0]
-    values = list(set(data.x.T[index]))
-    values.sort()
-    for i in range(divide_num):
-        values[i]=values[len(values)//10*i]
-    values=values[:divide_num]
-    for x_, y_ in zip(values[:-1], values[1:]):
-        ai = int((int(x_) + int(y_)) / 2)
-        g =  claculate_H_D_A(data, index)
-        if g >= max_g:
-            max_g = g
-            best_divide_value = ai
-    return best_divide_value
 
-def load_data(file_name='adult.data', condition=' >50K\n'):
-    print('loading data... ' + file_name)
-    file = open(file_name)
-    r_X,r_y= [],[]
-    for line in file.readlines():
-        items = str(line).split(',')
-        r_X.append(items[:-1])
-        r_y.append(items[-1] == condition)
-    del r_X[-1], r_y[-1]
-    X,y = np.array(r_X).T,np.array(r_y).astype('int')
-    for i in [0,2,4,10,11,12]:  # 连续变量离散化
-        row=X[i].astype(int)
-        X[i] = (row>choose_divide_value(_data(X.T,y),i)).astype(int).astype(str)
-    X = X.T
-    print(file_name + ' size:', X.shape)
-    data = _data(X, y)
-    index_list = list(range(data.x.shape[1]))
+def load_data():
+    X=np.array([['青年','否','否','一般'],['青年','否','否','好'],
+        ['青年','是','否','好'],['青年','是','是','一般'],
+        ['青年','否','否','一般'],['中年','否','否','一般'],
+        ['中年','否','否','好'],['中年','是','是','好'],
+        ['中年','否','是','非常好'],['中年','否','是','非常好'],
+        ['老年','否','是','非常好'],['老年','否','否','好'],
+        ['老年','是','否','好'],['老年','是','否','非常好'],
+        ['老年','否','否','一般']])
+    y=np.array(['否','否','是','是','否','否','否','是','是','是','是',
+        '是','是','是','否'])
+    data=_data(X,y)
+    index_list=list(range(X.shape[1]))
     return data, index_list
  
 
 def main():
-    t1=time.time()
     data, index_list = load_data()
-    test_data, _index_list = load_data('adult.test', condition=' >50K.\n')
+    test_data=np.array([['青年','否','是','一般'],['中年','是','否','好'],
+        ['老年','否','是','一般']])
+    t1=time.time()
     decision_tree = create_tree(data, index_list, 0.001,0.0007)
     pre_y = predict(decision_tree, data.x)
     print('train accuracy:',(np.array(pre_y) == data.y).sum() / len(pre_y))
-    testpre_y = predict(decision_tree, test_data.x)
-    print('test accuracy:',(np.array(testpre_y) == test_data.y).sum() / len(testpre_y))
+    testpre_y = predict(decision_tree, test_data)
     t2=time.time()
+    print(testpre_y)
     print('used_time:'+str(t2-t1)[:6]+'s')
 
 if __name__ == '__main__':

@@ -32,7 +32,7 @@ class condition_node(object):#非单节点
             self.branches[f] = create_tree(_data(
                 data.x[data.x.T[self.f_index] == f], 
                 data.y[data.x.T[self.f_index] == f]), 
-            self.index_list, alpha=self.alpha)
+            self.index_list[:], alpha=self.alpha)
 
 
 def claculate_H_D(data):#计算信息熵

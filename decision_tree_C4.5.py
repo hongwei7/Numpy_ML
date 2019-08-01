@@ -31,9 +31,9 @@ class condition_node(object):
     def create_nodes(self, data):
         self.branches = dict()
         self.branches[1] = create_tree(s_data(
-            data.x[data.x.T[self.f_index] >= self.divide_value], data.y[data.x.T[self.f_index] >= self.divide_value]), self.index_list, alpha=self.alpha)
+            data.x[data.x.T[self.f_index] >= self.divide_value], data.y[data.x.T[self.f_index] >= self.divide_value]), self.index_list[:], alpha=self.alpha)
         self.branches[0] = create_tree(s_data(
-            data.x[data.x.T[self.f_index] < self.divide_value], data.y[data.x.T[self.f_index] < self.divide_value]), self.index_list, alpha=self.alpha)
+            data.x[data.x.T[self.f_index] < self.divide_value], data.y[data.x.T[self.f_index] < self.divide_value]), self.index_list[:], alpha=self.alpha)
 
 
 def claculate_H_D(data):

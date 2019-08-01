@@ -29,7 +29,7 @@ class condition_node(object):#非单节点
             self.branches[f] = create_tree(_data(
                 data.x[data.x.T[self.f_index] == f], 
                 data.y[data.x.T[self.f_index] == f]), 
-            self.index_list, alpha=self.alpha)
+            self.index_list[:], alpha=self.alpha)
 
 
 def claculate_H_D(data):#计算信息熵
@@ -105,7 +105,7 @@ def load_data(file_name='adult.data', condition=' >50K\n'):
         row=X[i].astype(int)
         X[i] = (row>np.median(row)).astype(int).astype(str)
     X = X.T
-    print(file_name + ' size:', X.shape)
+    print(file_name + ' size:', X.shape,y.shape)
     data = _data(X, y)
     index_list = list(range(data.x.shape[1]))
     return data, index_list

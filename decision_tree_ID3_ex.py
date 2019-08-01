@@ -26,7 +26,7 @@ class condition_node(object):
         self.branches = dict()
         for f in set(data.x.T[self.f_index]):
             self.branches[f] = create_tree(s_data(
-                data.x[data.x.T[self.f_index] == f], data.y[data.x.T[self.f_index] == f]), self.index_list)
+                data.x[data.x.T[self.f_index] == f], data.y[data.x.T[self.f_index] == f]), self.index_list[:])
 
 
 
