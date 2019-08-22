@@ -1,7 +1,9 @@
 import numpy as np
 
 class single_tree(object):
-    def __init__(self,X,y,alpha,X0):
+    def __init__(self):
+        return
+    def train(self,X,y,alpha,X0):
         self.y,self.alpha=y,alpha
         min_loss=float('inf')
         best_f,best_x_val,best_y_val=0,0,0
@@ -11,15 +13,14 @@ class single_tree(object):
                     self.f,self.x_val,self.y_val=index,x_val,yi
                     loss=0
                     for i,xi in enumerate(X):
-                        loss=loss+(self.tree_predict(xi)!=y[i])*alpha[i]
+                        loss=loss+(self.predict(xi)!=y[i])*alpha[i]
                     if loss<=min_loss:
                         min_loss=loss
                         best_f,best_x_val,best_y_val=index,x_val,yi
         #print('min_loss',min_loss)
-
         self.f,self.x_val,self.y_val=best_f,best_x_val,best_y_val
 
-    def tree_predict(self,xi):
+    def predict(self,xi):
         if xi[self.f]==self.x_val:
             return self.y_val
         else:
@@ -37,7 +38,8 @@ class Adaboost(object):
         Xm=X
         alpha=np.ones(X.shape[0])/len(X)
         for epoch in range(self.m):
-            clf=single_tree(Xm,y,alpha,self.X)
+            clf=single_tree()
+            clf.train(Xm,y,alpha,self.X)
             em=(self.predict(X)!=y).sum()/len(X)
             if em==0:
                 #print('min_loss',0)
@@ -45,12 +47,7 @@ class Adaboost(object):
             km=0.5*np.log((1-em)/em)
             self.clf_list.append([km,clf])
             alpha=self.update_alpha(alpha,km)
-    def update_X(self,alpha):
-        Xm=[]
-        for xi,k in zip(self.X,alpha):
-            xj=xi*k
-            Xm.append(xj)
-        return np.array(Xm)
+
     def update_alpha(self,alpha,km):
         Z=0
         pre_y=self.predict(self.X)
@@ -63,7 +60,7 @@ class Adaboost(object):
         for xi in X:
             yi=0
             for k,clf in self.clf_list:
-                yi=yi+k*clf.tree_predict(xi)
+                yi=yi+k*clf.predict(xi)
             if yi>0:
                 yi=1
             else:
